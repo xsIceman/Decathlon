@@ -1,0 +1,38 @@
+﻿@model LyeDecathlon.Models.DecathlonDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for @Model.Decathlon.Name</h2>
+
+<table>
+    <tr>
+        <th>
+           Name
+        </th>
+        <th>
+           Included
+        </th>
+    </tr>
+@foreach (var item in Model.Events) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => item.Included)
+        </td>
+    </tr>
+}
+</table>
+
+
+
+<fieldset>
+    <legend>Decathlon</legend>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Decathlon.DecathlonId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

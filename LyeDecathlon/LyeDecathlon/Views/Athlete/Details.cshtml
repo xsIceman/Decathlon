@@ -1,0 +1,27 @@
+﻿@model LyeDecathlon.Models.Athlete
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Athlete</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+	@foreach (var item in Model.Results)
+ {
+	 
+ }
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AthleteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,123 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using LyeDecathlon.Models;
+
+namespace LyeDecathlon.Controllers
+{
+    public class AthleteController : Controller
+    {
+        private DecathlonContext db = new DecathlonContext();
+
+        //
+        // GET: /Athlete/
+
+        public ActionResult Index()
+        {
+            return View(db.Athletes.ToList());
+        }
+
+        //
+        // GET: /Athlete/Details/5
+
+        public ActionResult Details(int id = 0)
+        {
+			  Athlete athlete = db.Athletes.Include(d => d.Decathlons).Include(d => d.Results).Where(x => x.AthleteId == id).FirstOrDefault();
+            if (athlete == null)
+            {
+                return HttpNotFound();
+            }
+            return View(athlete);
+        }
+
+        //
+        // GET: /Athlete/Create
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Athlete/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Athlete athlete)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Athletes.Add(athlete);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(athlete);
+        }
+
+        //
+        // GET: /Athlete/Edit/5
+
+        public ActionResult Edit(int id = 0)
+        {
+            Athlete athlete = db.Athletes.Find(id);
+            if (athlete == null)
+            {
+                return HttpNotFound();
+            }
+            return View(athlete);
+        }
+
+        //
+        // POST: /Athlete/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Athlete athlete)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(athlete).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(athlete);
+        }
+
+        //
+        // GET: /Athlete/Delete/5
+
+        public ActionResult Delete(int id = 0)
+        {
+            Athlete athlete = db.Athletes.Find(id);
+            if (athlete == null)
+            {
+                return HttpNotFound();
+            }
+            return View(athlete);
+        }
+
+        //
+        // POST: /Athlete/Delete/5
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Athlete athlete = db.Athletes.Find(id);
+            db.Athletes.Remove(athlete);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+    }
+}
