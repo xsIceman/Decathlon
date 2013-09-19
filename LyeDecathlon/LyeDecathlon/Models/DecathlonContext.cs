@@ -1,4 +1,4 @@
-﻿using System;
+﻿ ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -17,9 +17,6 @@ namespace LyeDecathlon.Models
 
 		public DbSet<UserProfile> UserProfiles { get; set; }
 		public DbSet<Athlete> Athletes { get; set; }
-		public DbSet<Event> Events { get; set; }
-		public DbSet<EventResult> EventResults { get; set; }
-		public DbSet<Decathlon> Decathlons { get; set; }
 
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
