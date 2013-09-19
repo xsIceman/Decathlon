@@ -1,0 +1,116 @@
+﻿@model LyeDecathlon.Models.Athlete
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Athlete</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Meter100)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Meter100)
+            @Html.ValidationMessageFor(model => model.Meter100)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Meter1500)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Meter1500)
+            @Html.ValidationMessageFor(model => model.Meter1500)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Meter400)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Meter400)
+            @Html.ValidationMessageFor(model => model.Meter400)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Hurdles110)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Hurdles110)
+            @Html.ValidationMessageFor(model => model.Hurdles110)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LongJump)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LongJump)
+            @Html.ValidationMessageFor(model => model.LongJump)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShotPut)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShotPut)
+            @Html.ValidationMessageFor(model => model.ShotPut)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HighJump)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HighJump)
+            @Html.ValidationMessageFor(model => model.HighJump)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DiscusThrow)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiscusThrow)
+            @Html.ValidationMessageFor(model => model.DiscusThrow)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PoleVault)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PoleVault)
+            @Html.ValidationMessageFor(model => model.PoleVault)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JavelinThrow)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JavelinThrow)
+            @Html.ValidationMessageFor(model => model.JavelinThrow)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

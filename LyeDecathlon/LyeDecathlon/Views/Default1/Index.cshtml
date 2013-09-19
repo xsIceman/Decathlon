@@ -1,0 +1,93 @@
+﻿@model IEnumerable<LyeDecathlon.Models.Athlete>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meter100)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meter1500)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meter400)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hurdles110)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongJump)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShotPut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighJump)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscusThrow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoleVault)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JavelinThrow)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meter100)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meter1500)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meter400)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hurdles110)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongJump)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShotPut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighJump)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscusThrow)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoleVault)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JavelinThrow)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AthleteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AthleteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AthleteId })
+        </td>
+    </tr>
+}
+
+</table>

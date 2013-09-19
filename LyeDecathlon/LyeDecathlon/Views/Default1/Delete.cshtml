@@ -1,0 +1,96 @@
+﻿@model LyeDecathlon.Models.Athlete
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Athlete</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Meter100)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Meter100)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Meter1500)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Meter1500)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Meter400)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Meter400)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Hurdles110)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hurdles110)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LongJump)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LongJump)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShotPut)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShotPut)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HighJump)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HighJump)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DiscusThrow)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DiscusThrow)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PoleVault)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PoleVault)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.JavelinThrow)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.JavelinThrow)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

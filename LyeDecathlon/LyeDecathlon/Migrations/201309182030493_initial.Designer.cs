@@ -5,13 +5,13 @@ namespace LyeDecathlon.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class decathlonName : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(decathlonName));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201309102030439_decathlonName"; }
+            get { return "201309182030493_initial"; }
         }
         
         string IMigrationMetadata.Source

@@ -9,12 +9,12 @@ using LyeDecathlon.Models;
 
 namespace LyeDecathlon.Controllers
 {
-    public class AthleteController : Controller
+    public class Default1Controller : Controller
     {
         private DecathlonContext db = new DecathlonContext();
 
         //
-        // GET: /Athlete/
+        // GET: /Default1/
 
         public ActionResult Index()
         {
@@ -22,11 +22,11 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // GET: /Athlete/Details/5
+        // GET: /Default1/Details/5
 
         public ActionResult Details(int id = 0)
         {
-			  Athlete athlete = db.Athletes.Include(d => d.Decathlons).Include(d => d.Results).Where(x => x.AthleteId == id).FirstOrDefault();
+            Athlete athlete = db.Athletes.Find(id);
             if (athlete == null)
             {
                 return HttpNotFound();
@@ -35,7 +35,7 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // GET: /Athlete/Create
+        // GET: /Default1/Create
 
         public ActionResult Create()
         {
@@ -43,7 +43,7 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // POST: /Athlete/Create
+        // POST: /Default1/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -60,7 +60,7 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // GET: /Athlete/Edit/5
+        // GET: /Default1/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -73,7 +73,7 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // POST: /Athlete/Edit/5
+        // POST: /Default1/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,7 +89,7 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // GET: /Athlete/Delete/5
+        // GET: /Default1/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -102,7 +102,7 @@ namespace LyeDecathlon.Controllers
         }
 
         //
-        // POST: /Athlete/Delete/5
+        // POST: /Default1/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
