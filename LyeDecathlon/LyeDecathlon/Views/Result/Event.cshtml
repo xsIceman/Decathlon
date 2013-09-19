@@ -1,0 +1,28 @@
+﻿@model LyeDecathlon.Models.EventResult
+
+@{
+	ViewBag.Title = "Event";
+}
+
+<h2>@Model.EventName</h2>
+
+@foreach (var item in Model.Athletes)
+{
+	var updateId = "target" + item.AthleteId;
+   using (@Ajax.BeginForm("SaveResult", new AjaxOptions() { UpdateTargetId = updateId, HttpMethod = "Post" }))
+   {
+	   var athleteId = item.AthleteId;
+	  var eventId = Model.EventId;
+	  var result = 0.0;
+	@Html.HiddenFor(modelItem => athleteId)
+	@Html.HiddenFor(modelItem => eventId)
+	@Html.DisplayFor(modelItem => item.Name)
+	@Html.EditorFor(modelItem => result)
+	<input type="submit" name="save" value="Save" />
+	 
+	<div id="@updateId">
+	</div>
+   }
+   
+	<br />
+}

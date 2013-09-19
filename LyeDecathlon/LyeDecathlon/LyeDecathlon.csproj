@@ -186,15 +186,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AthleteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309182030493_initial.cs" />
+    <Compile Include="Migrations\201309182030493_initial.Designer.cs">
+      <DependentUpon>201309182030493_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309191914469_AllowNullResults.cs" />
+    <Compile Include="Migrations\201309191914469_AllowNullResults.Designer.cs">
+      <DependentUpon>201309191914469_AllowNullResults.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Athlete.cs" />
     <Compile Include="Models\DecathlonContext.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -308,12 +320,28 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Athlete\Index.cshtml" />
+    <Content Include="Views\Athlete\Details.cshtml" />
+    <Content Include="Views\Athlete\Create.cshtml" />
+    <Content Include="Views\Athlete\Edit.cshtml" />
+    <Content Include="Views\Athlete\Delete.cshtml" />
+    <Content Include="Views\Result\Index.cshtml" />
+    <Content Include="Views\Result\Event100Meter.cshtml" />
+    <Content Include="Views\Result\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201309182030493_initial.resx">
+      <DependentUpon>201309182030493_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309191914469_AllowNullResults.resx">
+      <DependentUpon>201309191914469_AllowNullResults.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

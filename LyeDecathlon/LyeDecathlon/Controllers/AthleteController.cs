@@ -9,7 +9,8 @@ using LyeDecathlon.Models;
 
 namespace LyeDecathlon.Controllers
 {
-    public class Default1Controller : Controller
+	[Authorize]
+    public class AthleteController : Controller
     {
         private DecathlonContext db = new DecathlonContext();
 

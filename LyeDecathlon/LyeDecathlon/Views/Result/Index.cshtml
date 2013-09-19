@@ -1,0 +1,12 @@
+﻿@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Velg øvelse</h2>
+
+<ul>
+	<li>@Html.ActionLink("100 meter", "Event", new { eventId = 1 })</li>
+	<li>@Html.ActionLink("1500 meter", "Event", new { eventId = 2 })</li>
+
+	<li>@Html.ActionLink("400 meter", "Event", new { eventId = 3 })</li>
+</ul>

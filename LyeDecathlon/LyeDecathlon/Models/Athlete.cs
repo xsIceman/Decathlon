@@ -12,16 +12,16 @@ namespace LyeDecathlon.Models
 		public int AthleteId { get; set; }
 		public string Name { get; set; }
 
-		public double Meter100 { get; set; }
-		public double Meter1500 { get; set; }
-		public double Meter400 { get; set; }
-		public double Hurdles110 { get; set; }
-		public double LongJump { get; set; }
-		public double ShotPut { get; set; }
-		public double HighJump { get; set; }
-		public double DiscusThrow { get; set; }
-		public double PoleVault { get; set; }
-		public double JavelinThrow { get; set; }
+		public double? Meter100 { get; set; }
+		public double? Meter1500 { get; set; }
+		public double? Meter400 { get; set; }
+		public double? Hurdles110 { get; set; }
+		public double? LongJump { get; set; }
+		public double? ShotPut { get; set; }
+		public double? HighJump { get; set; }
+		public double? DiscusThrow { get; set; }
+		public double? PoleVault { get; set; }
+		public double? JavelinThrow { get; set; }
 
 
 		//100 m					25.4347	18			1.81
