@@ -326,7 +326,6 @@
     <Content Include="Views\Athlete\Edit.cshtml" />
     <Content Include="Views\Athlete\Delete.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
-    <Content Include="Views\Result\Event100Meter.cshtml" />
     <Content Include="Views\Result\Event.cshtml" />
   </ItemGroup>
   <ItemGroup>

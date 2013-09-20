@@ -38,31 +38,31 @@ namespace LyeDecathlon.Controllers
 						athlete.Meter100 = result;
 						break;
 					case EventEnum.Meter1500:
-						athlete.Meter400 = result;
+						athlete.Meter1500 = result;
 						break;
 					case EventEnum.Meter400:
 						athlete.Meter400 = result;
 						break;
 					case EventEnum.Hurdles110:
-						athlete.Meter400 = result;
+						athlete.Hurdles110 = result;
 						break;
 					case EventEnum.LongJump:
-						athlete.Meter400 = result;
+						athlete.LongJump = result;
 						break;
 					case EventEnum.ShotPut:
-						athlete.Meter400 = result;
+						athlete.ShotPut = result;
 						break;
 					case EventEnum.HighJump:
-						athlete.Meter400 = result;
+						athlete.HighJump = result;
 						break;
 					case EventEnum.DiscusThrow:
-						athlete.Meter400 = result;
+						athlete.DiscusThrow = result;
 						break;
 					case EventEnum.PoleVault:
-						athlete.Meter400 = result;
+						athlete.PoleVault = result;
 						break;
 					case EventEnum.JavelinThrow:
-						athlete.Meter400 = result;
+						athlete.JavelinThrow = result;
 						break;
 					default:
 						return Content("Could not find event");
@@ -88,13 +88,13 @@ namespace LyeDecathlon.Controllers
 				case EventEnum.LongJump:
 					return "Lengde";
 				case EventEnum.ShotPut:
-					return "kule st;t";
+					return "Kulestøt";
 				case EventEnum.HighJump:
-					return "h;yde";
+					return "Høyde";
 				case EventEnum.DiscusThrow:
-					return "discus";
+					return "Diskos";
 				case EventEnum.PoleVault:
-					return "Stav sprang";
+					return "Stavsprang";
 				case EventEnum.JavelinThrow:
 					return "Spyd";
 				default:
