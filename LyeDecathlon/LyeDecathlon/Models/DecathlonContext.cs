@@ -17,6 +17,7 @@ namespace LyeDecathlon.Models
 
 		public DbSet<UserProfile> UserProfiles { get; set; }
 		public DbSet<Athlete> Athletes { get; set; }
+		public DbSet<Log> Logs { get; set; }
 
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LyeDecathlon.Models.Athlete>
+
+@{
+	ViewBag.Title = "Overview";
+}
+
+<h2>Resultat</h2>
+
+<ul class="noBullets">
+	@{
+	   var pos = 1;
+	   foreach (var ath in Model.Take(9))
+	  {
+		 var pstring = "p" + pos.ToString();
+		<li>
+			<h3>@pos</h3>
+			<div class="athleteName">@ath.Name </div>
+			@if (ath.Result != 0)
+   {
+				<div class="athleteRes">@ath.Result.ToString("####")</div>
+   }
+   else
+   {
+				<div class="athleteRes">0</div>
+   }
+		</li>
+   pos++;
+	 }
+	}
+</ul>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<LyeDecathlon.Models.Athlete>
+
+@{
+	ViewBag.Title = "Overview";
+}
+
+<h2>Overview</h2>
+
+<h3>Registrering</h3>
+@Html.ActionLink("Registrer resultat", "Index", "Result")
+
+@Html.ActionLink("Legg til utøver", "Create", "Athlete")
+
+<h3>Resultat</h3>
+<ol class="round">
+	@{
+	   var pos = 1;
+	   foreach (var ath in Model.Take(9))
+	  {
+
+		 var pstring = "p" + pos.ToString();
+		<li class="@pstring">
+			<div class="athleteName">@ath.Name </div>
+			@if (ath.Result != 0)
+   {
+				<div class="athleteRes">@ath.Result.ToString("####")</div>
+   }
+   else
+   {
+				<div class="athleteRes">0</div>
+   }
+		</li>
+   pos++;
+	 }
+	}
+</ol>
+@Html.ActionLink("Resultat", "Result")

@@ -3,31 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LyeDecathlon.Models;
 
 namespace LyeDecathlon.Controllers
 {
 	public class HomeController : Controller
 	{
+		private DecathlonContext db = new DecathlonContext();
+
 		public ActionResult Index()
 		{
+			if (User.Identity.IsAuthenticated)
+				return RedirectToAction("Overview");
 			ViewBag.Title = "22. Sep Lye Friidrett";
-			
-
 			return View();
 		}
 
-		public ActionResult About()
+		[Authorize]
+		public ActionResult Overview()
 		{
-			ViewBag.Message = "Your app description page.";
-
-			return View();
+			var athletes = db.Athletes.ToList();
+			var orderedList = athletes.OrderByDescending(x => x.Result);
+			return View(orderedList);
 		}
 
-		public ActionResult Contact()
+		[Authorize]
+		public ActionResult Result()
 		{
-			ViewBag.Message = "Your contact page.";
-
-			return View();
+			var athletes = db.Athletes.ToList();
+			var orderedList = athletes.OrderByDescending(x => x.Result);
+			return View(orderedList);
 		}
+
 	}
 }

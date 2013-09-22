@@ -264,10 +264,23 @@ section.feature {
     padding: 10px;
 }
 
+div.athleteName {
+	font-size:1.1em;
+}
+
+div.athleteRes {
+	color:gray;
+}
+
+ul.noBullets {
+	list-style-type:none;
+}
+
 /* ordered list */
 ol.round {
     list-style-type: none;
     padding-left: 0;
+	 height: auto;
 }
 
     ol.round li {
@@ -279,39 +292,39 @@ ol.round {
             background: url("../Images/orderedList0.png") no-repeat;
         }
 
-        ol.round li.one {
+        ol.round li.p1 {
             background: url("../Images/orderedList1.png") no-repeat;
         }
 
-        ol.round li.two {
+        ol.round li.p2 {
             background: url("../Images/orderedList2.png") no-repeat;
         }
 
-        ol.round li.three {
+        ol.round li.p3 {
             background: url("../Images/orderedList3.png") no-repeat;
         }
 
-        ol.round li.four {
+        ol.round li.p4 {
             background: url("../Images/orderedList4.png") no-repeat;
         }
 
-        ol.round li.five {
+        ol.round li.p5 {
             background: url("../Images/orderedList5.png") no-repeat;
         }
 
-        ol.round li.six {
+        ol.round li.p6 {
             background: url("../Images/orderedList6.png") no-repeat;
         }
 
-        ol.round li.seven {
+        ol.round li.p7 {
             background: url("../Images/orderedList7.png") no-repeat;
         }
 
-        ol.round li.eight {
+        ol.round li.p8 {
             background: url("../Images/orderedList8.png") no-repeat;
         }
 
-        ol.round li.nine {
+        ol.round li.p9 {
             background: url("../Images/orderedList9.png") no-repeat;
         }
 
@@ -699,15 +712,15 @@ tr.pager td {
         }
 
             ol.round li.zero,
-            ol.round li.one,
-            ol.round li.two,
-            ol.round li.three,
-            ol.round li.four,
-            ol.round li.five,
-            ol.round li.six,
-            ol.round li.seven,
-            ol.round li.eight,
-            ol.round li.nine {
+            ol.round li.p1,
+            ol.round li.p2,
+            ol.round li.p3,
+            ol.round li.p4,
+            ol.round li.p5,
+            ol.round li.p6,
+            ol.round li.p7,
+            ol.round li.p8,
+            ol.round li.p9 {
                 background: none;
             }
 

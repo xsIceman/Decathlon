@@ -24,7 +24,8 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
 		<td>
-			@Html.DisplayFor(modelItem => item.Result);
+			@item.Result.ToString("####")
+			@*@Html.DisplayFor(modelItem => item.Result)*@
 		</td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AthleteId }) |

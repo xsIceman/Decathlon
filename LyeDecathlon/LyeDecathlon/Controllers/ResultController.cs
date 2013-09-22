@@ -29,9 +29,15 @@ namespace LyeDecathlon.Controllers
 		[HttpPost]
 		public ActionResult SaveResult(int eventId, int athleteId, double? result)
 		{
+			
 			var athlete = db.Athletes.Find(athleteId);
 			if (athlete != null)
 			{
+				var log = new Log();
+				log.AthleteName = athlete.Name;
+				log.Event = GetName(eventId);
+				log.Result = result;
+				log.LogTime = DateTime.Now;
 				switch ((EventEnum)eventId)
 				{
 					case EventEnum.Meter100:
@@ -67,6 +73,7 @@ namespace LyeDecathlon.Controllers
 					default:
 						return Content("Could not find event");
 				}
+				db.Logs.Add(log);
 				db.SaveChanges();
 				return Content("Saved");
 			}

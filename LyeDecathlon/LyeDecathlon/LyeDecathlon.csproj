@@ -188,6 +188,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AthleteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Migrations\201309221055175_log.cs" />
+    <Compile Include="Migrations\201309221055175_log.Designer.cs">
+      <DependentUpon>201309221055175_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309221057595_logTime.cs" />
+    <Compile Include="Migrations\201309221057595_logTime.Designer.cs">
+      <DependentUpon>201309221057595_logTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -313,8 +322,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -327,6 +334,8 @@
     <Content Include="Views\Athlete\Delete.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
     <Content Include="Views\Result\Event.cshtml" />
+    <Content Include="Views\Home\Overview.cshtml" />
+    <Content Include="Views\Home\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309191914469_AllowNullResults.resx">
       <DependentUpon>201309191914469_AllowNullResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309221055175_log.resx">
+      <DependentUpon>201309221055175_log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309221057595_logTime.resx">
+      <DependentUpon>201309221057595_logTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
