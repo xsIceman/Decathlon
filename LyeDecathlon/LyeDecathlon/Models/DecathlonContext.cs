@@ -10,7 +10,7 @@ namespace LyeDecathlon.Models
 	public class DecathlonContext : DbContext
 	{
 		public DecathlonContext()
-			: base("LyeDecathlon")
+			: base("LyeDecathlonConnection")
 		{
 
 		}
